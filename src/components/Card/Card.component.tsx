@@ -1,6 +1,7 @@
+import { Monster } from '../../App';
 import './card.styles.css';
 
-const Card = ({ name, email, id }) => (
+const Card = ({ name, email, id }: Monster) => (
     <div className='card-container'>
         <img src={`https://robohash.org/${id}?set=set2`} alt={`monster ${name}`} />
         <h2>{name}</h2>
