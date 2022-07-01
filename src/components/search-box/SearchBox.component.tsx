@@ -1,34 +1,13 @@
+import { ChangeEventHandler } from 'react';
 import './search-box.styles.css';
-
-interface ISearchBoxProps {
-    className: string;
-    placeholder?: string;
-}
-
-interface ISearchBoxProps {
-    onChangeHandler: (a: string) => void;
-}
 
 type SearchBoxProps = {
     className: string;
     placeholder?: string;
-    onChangeHandler: (a: string) => void;
+    onChangeHandler: ChangeEventHandler<HTMLInputElement>;
 };
 
-// the main difference between interface and type is union is applicable in types
-type netherlandsAddress = {
-    street: string;
-    postcode: number;
-};
-
-type germanAddress = {
-    street: string;
-    postcode: string;
-};
-
-type europeAddress = netherlandsAddress | germanAddress;
-
-const SearchBox = ({ className, placeholder, onChangeHandler }: ISearchBoxProps) => (
+const SearchBox = ({ className, placeholder, onChangeHandler }: SearchBoxProps) => (
     <input
         className={`search-box ${className}`}
         type='search'
