@@ -18,6 +18,8 @@ const App = () => {
             .then((users) => setMonsters(users));
     }, []);
 
+    console.log('rendered');
+
     useEffect(() => {
         setFilteredMonsters(
             monsters.filter((monster) => monster.name.toLowerCase().includes(searchString))
